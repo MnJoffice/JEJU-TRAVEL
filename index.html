@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="여섯 가지 질문으로 나에게 맞는 제주 여행 취향과 추천 코스를 찾아보세요.">
+  <meta name="theme-color" content="#e52528">
+  <title>JEJU TYPE — 나에게 맞는 제주 여행 타입 찾기</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e52528'/%3E%3Cpath d='M8 9h6v9c0 3-1 5-4 5-1 0-2 0-3-1l2-4c1 1 2 1 2-1V9zm9 0h8v4h-4v2h4v4h-4v4h-4V9z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="JEJU TYPE 처음으로">JEJU <span>TYPE</span></a>
+    <div class="header-note">취향으로 발견하는 제주</div>
+  </header>
+
+  <main>
+    <section id="intro" class="screen intro-screen" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span>01</span> TRAVEL PERSONALITY TEST</p>
+        <h1 id="intro-title">제주에서의 나는<br><em>어떤 여행자일까?</em></h1>
+        <p class="intro-description">누군가는 파도 소리를 따라 걷고, 누군가는 시장의 온도를 기억합니다. 6개의 선택으로 당신다운 제주를 찾아보세요.</p>
+        <div class="intro-actions">
+          <button id="start-btn" class="primary-btn" type="button">테스트 시작하기 <span aria-hidden="true">→</span></button>
+          <p><strong>6</strong> questions · 약 1분</p>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="제주의 바다와 오름 풍경">
+        <img src="./assets/jeju-coast.png" alt="검은 현무암과 푸른 바다, 오름이 펼쳐진 제주 해안">
+        <div class="hero-index" aria-hidden="true">JEJU / 33.4996° N</div>
+        <div class="red-card" aria-hidden="true"><b>4</b><span>TRAVEL<br>TYPES</span></div>
+      </div>
+    </section>
+
+    <section id="quiz" class="screen quiz-screen" aria-live="polite" hidden>
+      <div class="quiz-top">
+        <button id="back-btn" class="text-btn" type="button" aria-label="이전 질문">← 이전</button>
+        <div class="progress-meta"><span id="progress-text">QUESTION 01 / 06</span><span id="progress-percent">17%</span></div>
+      </div>
+      <div class="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+      <div class="question-wrap">
+        <p class="question-number" id="question-number">Q. 01</p>
+        <h2 id="question-title"></h2>
+        <p class="question-hint">지금 마음이 먼저 향하는 쪽을 골라주세요.</p>
+        <div id="options" class="options" role="radiogroup" aria-labelledby="question-title"></div>
+      </div>
+    </section>
+
+    <section id="result" class="screen result-screen" aria-live="polite" hidden>
+      <div class="result-summary">
+        <p class="eyebrow"><span>RESULT</span> YOUR JEJU TYPE</p>
+        <p class="result-kicker">당신의 제주 여행 타입은</p>
+        <h2 id="result-title"></h2>
+        <p id="result-description" class="result-description"></p>
+        <div id="result-tags" class="tags"></div>
+        <div class="result-actions">
+          <button id="copy-btn" class="primary-btn" type="button">결과 복사하기 <span aria-hidden="true">↗</span></button>
+          <button id="restart-btn" class="outline-btn" type="button">다시 테스트하기</button>
+        </div>
+        <p id="copy-status" class="copy-status" role="status"></p>
+      </div>
+      <div class="result-plan">
+        <div class="plan-heading">
+          <div><p>CURATED FOR YOU</p><h3>이렇게 떠나보세요</h3></div>
+          <span id="result-code"></span>
+        </div>
+        <ol id="result-route" class="route-list"></ol>
+        <div class="result-tip"><strong>TRAVEL NOTE</strong><p id="result-tip"></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>JEJU TYPE</span><span>당신의 방식으로 만나는 섬</span></footer>
+  <script src="./script.js"></script>
+</body>
+</html>
